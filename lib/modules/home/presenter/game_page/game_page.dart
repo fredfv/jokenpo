@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:jokenpo/modules/home/presenter/home_page/home_controller.dart';
 
-import '../../models/choises.dart';
+import '../../data/models/choises.dart';
+import 'game_controller.dart';
 
-class HomePage extends StatelessWidget {
-  final HomeController controller;
+class GamePage extends StatelessWidget {
+  final GameController controller;
 
-  const HomePage({super.key, required this.controller});
+  const GamePage({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {

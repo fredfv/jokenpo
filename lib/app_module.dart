@@ -1,17 +1,18 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:jokenpo/modules/home/presenter/home_page/home_controller.dart';
-import 'package:jokenpo/modules/home/presenter/home_page/home_page.dart';
+
+import 'modules/home/presenter/game_page/game_controller.dart';
+import 'modules/home/presenter/game_page/game_page.dart';
 
 class AppModule extends Module {
   @override
   List<Bind> get binds => [
-        Bind.lazySingleton((i) => HomeController()),
+        Bind.lazySingleton((i) => GameController()),
       ];
 
   @override
   List<ModularRoute> get routes => [
         ChildRoute('/',
-            child: (context, args) => HomePage(
+            child: (context, args) => GamePage(
                   controller: Modular.get(),
                 )),
       ];

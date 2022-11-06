@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'dart:math';
 
-import '../../models/choises.dart';
+import '../../data/models/choises.dart';
 
-class HomeController extends ChangeNotifier {
+class GameController extends ChangeNotifier {
   Choises? chosenAction;
   Choises? computerAction;
   String? result;
@@ -27,11 +27,11 @@ class HomeController extends ChangeNotifier {
 
   String? _getIcon(Choises action) {
     switch (action) {
-      case Choises.pedra:
+      case Choises.rock:
         return '👊';
-      case Choises.papel:
+      case Choises.paper:
         return '🖐';
-      case Choises.tesoura:
+      case Choises.scissors:
         return '✌️';
       default:
         null;
@@ -54,20 +54,20 @@ class HomeController extends ChangeNotifier {
   String _getResult(Choises chosenAction, Choises computerAction) {
     if (chosenAction == computerAction) {
       return 'Draw';
-    } else if (chosenAction == Choises.pedra) {
-      if (computerAction == Choises.papel) {
+    } else if (chosenAction == Choises.rock) {
+      if (computerAction == Choises.paper) {
         return 'You lose';
       } else {
         return 'You win';
       }
-    } else if (chosenAction == Choises.papel) {
-      if (computerAction == Choises.tesoura) {
+    } else if (chosenAction == Choises.paper) {
+      if (computerAction == Choises.scissors) {
         return 'You lose';
       } else {
         return 'You win';
       }
-    } else if (chosenAction == Choises.tesoura) {
-      if (computerAction == Choises.pedra) {
+    } else if (chosenAction == Choises.scissors) {
+      if (computerAction == Choises.rock) {
         return 'You lose';
       } else {
         return 'You win';
